@@ -1,50 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Test Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenwood Academy</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Jacksonville Public Schools</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">Greenwood Academy</div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section id="home" class="hero">
-            <h2>Welcome Jacksonville Public Schools</h2>
-            <p>Jacksonville Public Schools, Is the perfect school for your kid! we are kind, interactive, calm. We teach in a fun way! Enroll now!</p>
-            <button id="learnMoreBtn">Learn More</button>
-        </section>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Greenwood Academy</h1>
+      <p>Where learning meets excellence and community.</p>
+      <button class="btn-primary" onclick="scrollToSection('about')">Learn More</button>
+    </div>
+  </section>
 
-        <section id="about">
-            <h2>About This Site</h2>
-            <p>This is a demo website showcasing a clean layout with responsive design and simple interactive features.</p>
-        </section>
+  <section id="about" class="info-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        Greenwood Academy is dedicated to nurturing young minds through academic
+        excellence, creativity, and community engagement. Our mission is to inspire
+        lifelong learners who make an impact.
+      </p>
+    </div>
+  </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
+  <section id="academics" class="info-section bg-light">
+    <div class="container">
+      <h2>Academics</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Elementary School</h3>
+          <p>Fostering curiosity and foundational learning for our youngest students.</p>
+          <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="card">
+          <h3>Middle School</h3>
+          <p>Encouraging independent thinking, collaboration, and growth.</p>
+          <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="card">
+          <h3>High School</h3>
+          <p>Preparing students for college, careers, and engaged citizenship.</p>
+          <a href="#" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2025 Jacksonville Public Schools. All rights reserved.</p>
-    </footer>
+  <section id="news" class="info-section">
+    <div class="container">
+      <h2>Latest News</h2>
+      <div class="news-list">
+        <article class="news-item">
+          <h3>🏆 Greenwood Wins Debate Championship</h3>
+          <p>Our debate team brought home the state trophy for the 2025 season!</p>
+        </article>
+        <article class="news-item">
+          <h3>🎨 Student Art Exhibition Opens</h3>
+          <p>Join us for our annual student art showcase on November 20th.</p>
+        </article>
+        <article class="news-item">
+          <h3>🎓 Enrollment Now Open</h3>
+          <p>Applications for the 2025–2026 school year are now being accepted.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="contact" class="info-section bg-light">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm" class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <p id="formStatus" class="form-status"></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Greenwood Academy — All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
