@@ -1,45 +1,49 @@
-/* ===== Global Reset ===== */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f9fafb;
-  color: #1a1a1a;
-  line-height: 1.6;
+  background: #f5f7fa;
+  color: #111;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* ===== Header ===== */
+/* === HEADER === */
 header {
-  background: linear-gradient(90deg, #004aad, #0072ff);
-  color: white;
-  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, #004aad, #006bff);
+  color: #fff;
+  padding: 1.3rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 header:hover {
-  background: linear-gradient(90deg, #0056cc, #0095ff);
-  transform: scale(1.01);
+  background: linear-gradient(135deg, #005be0, #0090ff);
+  transform: translateY(-1px);
 }
 
 header h1 {
   font-size: 1.8rem;
+  letter-spacing: 1px;
   font-weight: 600;
 }
 
-/* ===== Navigation ===== */
+/* === NAVIGATION === */
 nav a {
   color: white;
   margin-left: 2rem;
@@ -56,57 +60,48 @@ nav a::after {
   bottom: -5px;
   width: 0;
   height: 3px;
-  background: #ffeb3b;
+  background: #ffcb05;
   transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffeb3b;
-  transform: scale(1.05);
+  color: #ffcb05;
+  transform: translateY(-3px);
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-/* ===== Hero Section ===== */
+/* === HERO SECTION === */
 .hero {
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80')
-    center/cover no-repeat;
+  height: 85vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1920&q=80')
+      center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: white;
   text-align: center;
-  animation: fadeInHero 1.2s ease-out;
-}
-
-@keyframes fadeInHero {
-  from {
-    opacity: 0;
-    transform: scale(1.1);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  animation: fadeIn 1.2s ease-out;
 }
 
 .hero h2 {
-  font-size: 3.2rem;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  color: #eaeaea;
 }
 
-/* ===== Buttons ===== */
+/* === BUTTONS === */
 .btn {
   background: linear-gradient(135deg, #004aad, #0072ff);
   color: white;
@@ -117,22 +112,21 @@ nav a:hover::after {
   cursor: pointer;
   margin-top: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
   background: linear-gradient(135deg, #005ee0, #00a2ff);
   transform: translateY(-5px) scale(1.08);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* ===== Sections ===== */
+/* === SECTIONS === */
 .section {
   padding: 5rem 3rem;
   opacity: 0;
-  transform: translateY(80px) scale(0.95);
-  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform, opacity;
+  transform: translateY(100px) scale(0.95);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .section.visible {
@@ -140,30 +134,30 @@ nav a:hover::after {
   transform: translateY(0) scale(1);
 }
 
-/* ===== Cards ===== */
+/* === CARDS === */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
   margin-top: 3rem;
 }
 
 .card {
-  background-color: white;
+  background: white;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
   transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
@@ -181,33 +175,33 @@ nav a:hover::after {
   color: #004aad;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  font-size: 1.25rem;
 }
 
-/* ===== Footer ===== */
+/* === FOOTER === */
 footer {
-  background: linear-gradient(90deg, #004aad, #0072ff);
+  background: linear-gradient(135deg, #004aad, #0072ff);
   color: white;
   text-align: center;
-  padding: 2rem;
-  margin-top: 4rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem 1rem;
+  margin-top: 5rem;
+  font-size: 1rem;
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== Strong Scroll Animation Keyframes ===== */
-@keyframes fadeUp {
+/* === SCROLL ANIMATION KEYFRAMES === */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(120px) scale(0.9);
+    transform: scale(1.1);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: scale(1);
   }
 }
 
-/* ===== Responsive ===== */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -220,5 +214,9 @@ footer {
 
   .hero h2 {
     font-size: 2.3rem;
+  }
+
+  .section {
+    padding: 3.5rem 1.5rem;
   }
 }
