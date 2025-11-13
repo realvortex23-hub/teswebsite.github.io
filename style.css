@@ -9,7 +9,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f9fafb;
-  color: #222;
+  color: #1a1a1a;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -24,19 +24,19 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
 
 header:hover {
-  background: linear-gradient(90deg, #0055d4, #0090ff);
+  background: linear-gradient(90deg, #0056cc, #0095ff);
   transform: scale(1.01);
 }
 
 header h1 {
   font-size: 1.8rem;
-  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 /* ===== Navigation ===== */
@@ -45,12 +45,28 @@ nav a {
   margin-left: 2rem;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: #ffeb3b;
+  transition: width 0.3s ease;
 }
 
 nav a:hover {
   color: #ffeb3b;
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 /* ===== Hero Section ===== */
@@ -61,54 +77,67 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: white;
   text-align: center;
-  flex-direction: column;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeInHero 1.2s ease-out;
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .hero h2 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* ===== Buttons ===== */
 .btn {
-  background-color: #004aad;
+  background: linear-gradient(135deg, #004aad, #0072ff);
   color: white;
   border: none;
-  padding: 0.8rem 1.6rem;
-  border-radius: 30px;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .btn:hover {
-  background-color: #0072ff;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #005ee0, #00a2ff);
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
-/* ===== Section Animations ===== */
+/* ===== Sections ===== */
 .section {
   padding: 5rem 3rem;
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
+  transform: translateY(80px) scale(0.95);
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, opacity;
 }
 
 .section.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* ===== Cards ===== */
@@ -121,57 +150,60 @@ nav a:hover {
 
 .card {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .card-content {
-  padding: 1.2rem;
+  padding: 1.4rem;
+  text-align: center;
 }
 
 .card-content h3 {
   color: #004aad;
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 /* ===== Footer ===== */
 footer {
-  background-color: #004aad;
+  background: linear-gradient(90deg, #004aad, #0072ff);
   color: white;
   text-align: center;
   padding: 2rem;
   margin-top: 4rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== Scroll Animations ===== */
-@keyframes fadeIn {
+/* ===== Strong Scroll Animation Keyframes ===== */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(120px) scale(0.9);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -187,6 +219,6 @@ footer {
   }
 
   .hero h2 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 }
