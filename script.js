@@ -25,13 +25,13 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
 const sections = document.querySelectorAll(".section");
 
 window.addEventListener("scroll", () => {
-  const triggerBottom = window.innerHeight * 0.85;
+  const trigger = window.innerHeight * 0.85;
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
-    if (rect.top < triggerBottom) {
+    if (rect.top < trigger) {
       section.classList.add("visible");
-      section.style.animation = "fadeUp 1s ease-out forwards";
     }
   });
 });
+
 
