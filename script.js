@@ -22,16 +22,6 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
   }
 });
 
-// Scroll animation for sections
-const sections = document.querySelectorAll(".info-section, .site-footer");
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < trigger) sec.classList.add("visible");
-  });
-});
-
 const sections = document.querySelectorAll(".section");
 
 window.addEventListener("scroll", () => {
@@ -40,6 +30,7 @@ window.addEventListener("scroll", () => {
     const rect = section.getBoundingClientRect();
     if (rect.top < triggerBottom) {
       section.classList.add("visible");
+      section.style.animation = "fadeUp 1s ease-out forwards";
     }
   });
 });
